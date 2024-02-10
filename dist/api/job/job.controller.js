@@ -1,8 +1,6 @@
-import express from 'express';
-import axios from 'axios';
+import axios from "axios";
 const JOB_URL = '';
-const router = express.Router();
-router.get('/', async (req, res) => {
+export async function getJobs(req, res) {
     try {
         const response = await axios.get(JOB_URL);
         res.json(response.data);
@@ -11,8 +9,8 @@ router.get('/', async (req, res) => {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
     }
-});
-router.get('/:id', async (req, res) => {
+}
+export async function getJobById(req, res) {
     try {
         const response = await axios.get(JOB_URL + req.params.id);
         res.json(response.data);
@@ -21,8 +19,8 @@ router.get('/:id', async (req, res) => {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
     }
-});
-router.post('/', async (req, res) => {
+}
+export async function addJob(req, res) {
     try {
         const response = await axios.post(JOB_URL, req.body);
         res.json(response.data);
@@ -31,8 +29,8 @@ router.post('/', async (req, res) => {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
     }
-});
-router.put('/:id', async (req, res) => {
+}
+export async function updateJob(req, res) {
     try {
         const response = await axios.put(JOB_URL + req.params.id, req.body);
         res.json(response.data);
@@ -41,8 +39,8 @@ router.put('/:id', async (req, res) => {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
     }
-});
-router.delete('/:id', async (req, res) => {
+}
+export async function removeJob(req, res) {
     try {
         const response = await axios.delete(JOB_URL + req.params.id);
         res.json(response.data);
@@ -51,5 +49,4 @@ router.delete('/:id', async (req, res) => {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
     }
-});
-export const jobRouter = router;
+}

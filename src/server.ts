@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
 // Routes
 import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js';
 app.all('*', setupAsyncLocalStorage);
-import { centralRouter } from './routes/routes.js';
+import { centralRouter } from './routes.js';
 
 app.use('/api', centralRouter);
 

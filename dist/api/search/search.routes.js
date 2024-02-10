@@ -12,4 +12,4 @@ router.get('/', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-export const searchRouter = router;
+export const searchRoutes = router;

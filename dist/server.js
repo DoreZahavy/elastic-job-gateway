@@ -25,7 +25,7 @@ else {
 // Routes
 import { setupAsyncLocalStorage } from './middlewares/setupAls.middleware.js';
 app.all('*', setupAsyncLocalStorage);
-import { centralRouter } from './routes/routes.js';
+import { centralRouter } from './routes.js';
 app.use('/api', centralRouter);
 // Make every server-side-route to match the index.html
 app.get('/**', (req, res) => {

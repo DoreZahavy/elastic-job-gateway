@@ -16,4 +16,4 @@ router.get('/', async (req, res) => {
 })
 
 
-export const searchRouter = router
+export const searchRoutes = router
