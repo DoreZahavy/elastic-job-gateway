@@ -11,7 +11,6 @@ export async function setupAsyncLocalStorage(req: Request, res: Response, next: 
 
         const loggedinUser = validateToken(req.cookies.loginToken)
     
-
         if (loggedinUser) {
             // const alsStore = asyncLocalStorage.getStore() as typeof storage;
             storage.loggedinUser = loggedinUser;
